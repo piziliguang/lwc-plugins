@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property label="Icon Name" name="iconName" type="String"/>
+            <property label="Title" name="title" type="String"/>
+
+            <property label="Object Name" name="objectName" type="String" required="true"/>
+            <property label="FieldSet Name" name="fieldsetName" type="String" required="true" />
+            <property label="SOQL Condition" name="soqlCondition" type="String" />
+            <property label="Pagination" name="pagination" type="Integer" description="The number of records per page" />            
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

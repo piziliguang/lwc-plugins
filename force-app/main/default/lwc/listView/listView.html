@@ -1,0 +1,19 @@
+<template>
+    <lightning-card icon-name={iconName} title={cardTitle}>
+        <div style="position:relative;min-height:100px">
+            <lightning-spinner variant="brand" if:true={isLoading} size="small"></lightning-spinner>
+            <lightning-spinner variant="brand" if:true={isLoadingMore} size="small"></lightning-spinner>
+
+            <lightning-datatable 
+                if:false={isLoading}
+                key-field="id"
+                data={records}
+                columns={columns}
+                hide-checkbox-column="true"
+                show-row-number-column="true">
+            </lightning-datatable>
+
+            <div if:true={isShowLoadMore} class="slds-text-align_center slds-p-top_small slds-text-title_bold"><a onclick={loadMore}>Load More</a></div>
+        </div>
+    </lightning-card>
+</template>
